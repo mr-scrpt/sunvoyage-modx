@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{$_modx->config.cultureKey}">
 {include 'file:chunks/base_head.tpl'}
-
+<?php
+  
+?>
 <body class="page page_theme layout">
 
   {include 'file:chunks/base_overlay.tpl'}
