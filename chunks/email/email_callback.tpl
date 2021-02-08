@@ -22,7 +22,7 @@
 <body style="margin:0;padding:0;background:#f6f6f6;">
   <div style="height:100%;padding-top:20px;background:#f6f6f6;">
     <a href="{$site_url}">
-      <img style="{$style.logo}" src="{$site_url}{$_modx->getPlaceholder('+conf_mail_logo')}" alt="{$_modx->config.site_name}" width="240" />
+      <img style="{$style.logo}" src="{$site_url}{$_modx->config.conf_mail_logo}" alt="{$_modx->config.site_name}" width="240" />
     </a>
     <!-- body -->
     <table class="body-wrap" style="padding:0 20px 20px 20px;width: 100%;background:#f6f6f6;margin-top:10px;">

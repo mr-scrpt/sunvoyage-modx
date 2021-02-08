@@ -8,7 +8,7 @@
         <div class="item-a__title title">
           <a class="title__sub link" href="#">{$pagetitle}</a>
         </div>
-        <div class="item-a__text">{$introtext | truncate: 220 }</div>
+        <div class="item-a__text">{$content | truncate: 220 }</div>
       </div>
       <a class="item-a__details-box link" href="{$id | url}">
         <span class="item-a__details">Читать подробнее</span>

@@ -11,18 +11,15 @@
     <div class="header__logo">
       <div class="logo">
         <div class="logo__inner">
-          {var $arrPhone = $_modx->config.conf_phone | split : ", "}
-          {foreach $arrPhone as $phone}
-          <div>{$phone}</div>
-          {/foreach}
+
 
           {if $_modx->resource.id !== 1}
           <a class="logo__link" href="{$_modx->config.site.url}">
-            <img class="img logo__img" src="./assets/templates/main/img/logo.svg" />
+            <img class="img logo__img" src="{$_modx->config.conf_logo}" alt="Логотип {$_modx->config.site_name}" title="Интернет-магазин {$_modx->config.site_name}" />
           </a>
           {else}
           <span class="logo__link">
-            <img class="img logo__img" src="./assets/templates/main/img/logo.svg" />
+            <img class="img logo__img" src="{$_modx->config.conf_logo}" alt="Логотип {$_modx->config.site_name}" title="Интернет-магазин {$_modx->config.site_name}" />
           </span>
           {/if}
 
@@ -66,7 +63,10 @@
           <div class="panel__body">
             <div class="cart__list">
               <div class="cart__row">
-                <div class="cart__col-info"><a class="cart__col-img-box" href="#"><img class="cart__col-img img" src="./assets/templates/main/img/temp/bag.jpg" alt="" /></a>
+                <div class="cart__col-info">
+                  <a class="cart__col-img-box" href="#">
+                    <img class="cart__col-img img" src="./assets/templates/main/img/temp/bag.jpg" alt="" />
+                  </a>
                   <div class="cart__col-title-box">
                     <div class="title"><a class="link title__sub cart__col-title" href="#">СУМКА ФРАНК</a></div>
                     <div class="cart__col-article">0002131223</div>

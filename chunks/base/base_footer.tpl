@@ -4,11 +4,11 @@
 
     {if $_modx->resource.id !== 1}
     <a class="footer__logo-box" href="{$_modx->config.site.url}">
-      <img class="footer__logo img" src="./assets/templates/main/img/logo_invert.svg" alt="" />
+      <img class="footer__logo img" src="{$_modx->config.conf_logo_invert}" alt="Логотип {$_modx->config.site_name}" title="Интернет-магазин {$_modx->config.site_name}" />
     </a>
     {else}
     <div class="footer__logo-box">
-      <img class="footer__logo img" src="./assets/templates/main/img/logo_invert.svg" alt="" />
+      <img class="footer__logo img" src="{$_modx->config.conf_logo_invert}" alt="Логотип {$_modx->config.site_name}" title="Интернет-магазин {$_modx->config.site_name}" />
     </div>
     {/if}
 

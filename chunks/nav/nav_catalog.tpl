@@ -31,7 +31,7 @@
       <div class="menu-tile">
         <div class="menu-tile__inner menu-tile__inner_show" data-target="empty">
           <div class="menu-tile__empty-item">
-            <img class="menu-tile__img img" src="./assets/templates/main/img/logo.svg" />
+            <img class="menu-tile__img img" src="./assets/templates/main/img/logo.svg" alt="Логотип {$_modx->config.site_name}" title="Логотип в меню" />
           </div>
         </div>
         <div class="menu-tile__inner" data-target="woman">
