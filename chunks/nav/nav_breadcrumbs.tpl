@@ -4,9 +4,10 @@
 
       {$_modx->runSnippet("pdoCrumbs", [
       "showHome" => 1,
-      "tplWrapper" => "@FILE chunks/nav_breadcrumbs__wrapper.tpl",
-      "tpl" => "@FILE chunks/nav_breadcrumbs__item.tpl",
-      "tplCurrent" => "@FILE chunks/nav_breadcrumbs__item.tpl",
+      "tplWrapper" => "@FILE chunks/nav/nav_breadcrumbs__wrapper.tpl",
+      "tpl" => "@FILE chunks/nav/nav_breadcrumbs__item.tpl",
+      "tplCurrent" => "@FILE chunks/nav/nav_breadcrumbs__item.tpl",
+      "exclude" => "2,8,21,27,28,32"
 
       ])}
 
