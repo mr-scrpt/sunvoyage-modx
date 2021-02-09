@@ -29,7 +29,7 @@
           'ajaxMode' => 'button',
           'ajaxTplMore' => '@INLINE <div class="promo__button-box"><button class="button button_size_l button_view_action btn-more"><span class="button__text">Еще акции</span></button></div>',
           ])}
-          {$_modx->getPlaceholder('page.nav')}
+          {'page.nav' | placeholder}
         </div>
       </section>
     </div>

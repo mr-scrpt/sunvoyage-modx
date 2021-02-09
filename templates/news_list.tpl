@@ -48,7 +48,7 @@
 
           </div>
 
-          {$_modx->getPlaceholder('page.nav')}
+          {'page.nav' | placeholder}
 
 
         </div>

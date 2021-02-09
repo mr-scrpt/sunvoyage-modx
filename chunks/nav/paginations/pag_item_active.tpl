@@ -1,0 +1,1 @@
+<a class="pagination__item link pagination__item_active" href="{$href}">{$pageNo}</a>
