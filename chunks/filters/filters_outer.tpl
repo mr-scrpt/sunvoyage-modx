@@ -21,45 +21,10 @@
         <div class="filter">
           <form action="{$_modx->makeUrl($_modx->resource.id)}" method="post" id="mse2_filters" class="filter__inner">
             <div class="filter__first">
-              <div class="filter__row">
-                <div class="filter__name">Стоимость</div>
-                <div class="filter__body filter__price-box">
 
+              {'my_ms|price'| placeholder}
+              {'my_msoption|size_simple'| placeholder}
 
-                  {'my_ms|price'| placeholder}
-
-                  <!-- <span class="input input_size_l filter__input-price">
-                    <span class="input__box">
-                      <span class="input__name">от</span>
-                      <input class="input__control" />
-                    </span>
-                  </span>
-                  <span class="input input_size_l filter__input-price">
-                    <span class="input__box">
-                      <span class="input__name">до</span>
-                      <input class="input__control" />
-                    </span>
-                  </span> -->
-                </div>
-              </div>
-              <div class="filter__row">
-                <div class="filter__name">Размеры</div>
-                <div class="filter__size-box">
-                  {'my_msoption|size_simple'| placeholder}
-                  <label class="label checkbox-button checkbox-button_size_l">
-                    <input class="checkbox-button__control" type="checkbox" />
-                    <span class="checkbox-button__text">Большой</span>
-                  </label>
-                  <label class="label checkbox-button checkbox-button_size_l">
-                    <input class="checkbox-button__control" type="checkbox" />
-                    <span class="checkbox-button__text">Средний</span>
-                  </label>
-                  <label class="label checkbox-button checkbox-button_size_l">
-                    <input class="checkbox-button__control" type="checkbox" />
-                    <span class="checkbox-button__text">Малый</span>
-                  </label>
-                </div>
-              </div>
             </div>
             <div class="filter__second">
               <div class="filter__row">
@@ -105,26 +70,13 @@
               </div>
             </div>
             <div class="filter__third">
+
               <div class="filter__row filter__select-box">
-                <div class="select select_size_l select_width_available"><span class="select__name">Бренд</span>
-                  <select class="select__control">
-                    <optgroup class="select__group">
-                      <option class="select__option" value="first">DG</option>
-                      <option class="select__option" value="second">louis vuitton</option>
-                      <option class="select__option" value="third">Dior</option>
-                    </optgroup>
-                  </select>
-                </div>
-                <div class="select select_size_l select_width_available"><span class="select__name">Страна</span>
-                  <select class="select__control">
-                    <optgroup class="select__group">
-                      <option class="select__option" value="first">Украина</option>
-                      <option class="select__option" value="second">Италия</option>
-                      <option class="select__option" value="third">Франция</option>
-                    </optgroup>
-                  </select>
-                </div>
-                <div class="select select_size_l select_width_available"><span class="select__name">Сезон</span>
+
+                {'my_ms|vendor'| placeholder}
+
+                <div class="select select_size_l select_width_available">
+                  <span class="select__name">Сезон</span>
                   <select class="select__control">
                     <optgroup class="select__group">
                       <option class="select__option" value="first">Лето</option>
@@ -137,14 +89,12 @@
             </div>
             <div class="filter__fourth">
               <div class="filter__row filter__toggle-box">
-                <div class="filter__toggle">
-                  <label class="label checkbox-toggle checkbox-toggle_size_l"><span class="checkbox-toggle__box">
-                      <input class="checkbox-toggle__control" type="checkbox" /></span><span class="checkbox-toggle__text">Только Новинки</span></label>
-                </div>
-                <div class="filter__toggle">
+                {'my_ms|new'| placeholder}
+                {'my_ms|old_price'| placeholder}
+                <!-- <div class="filter__toggle">
                   <label class="label checkbox-toggle checkbox-toggle_size_l"><span class="checkbox-toggle__box">
                       <input class="checkbox-toggle__control" type="checkbox" /></span><span class="checkbox-toggle__text">Только Скидки</span></label>
-                </div>
+                </div> -->
                 <div class="filter__toggle">
                   <label class="label checkbox-toggle checkbox-toggle_size_l"><span class="checkbox-toggle__box">
                       <input class="checkbox-toggle__control" type="checkbox" /></span><span class="checkbox-toggle__text">Только в наличии</span></label>
@@ -152,8 +102,12 @@
               </div>
             </div>
             <div class="filter__fifth">
-              <button class="button button_size_l"><span class="button__text">Сбросить</span></button>
-              <button class="button button_size_l button_view_action"><span class="button__text">Купить</span></button>
+              <button class="button button_size_l filter__reset">
+                <span class="button__text">Сбросить</span>
+              </button>
+              <!-- <button class="button button_size_l button_view_action">
+              <span class="button__text">Купить</span>
+              </button> -->
             </div>
           </form>
         </div>

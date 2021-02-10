@@ -1,0 +1,1 @@
+<option class="select__option {$disabled}" value="{$value}" {$selected} {$disabled}>{$title}</option>
