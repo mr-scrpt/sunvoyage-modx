@@ -26,12 +26,21 @@
     'tplPagePrevEmpty' => '',
     'tplPageNextEmpty' => '',
 
+    'sort'=>'
+    ms|price:asc
+    ',
+
+
+
     'aliases' => '
     ms|price==price,
     ms|vendor==brand,
     ms|new==new,
     ms|old_price==old_price,
     msoption|size_simple==size,
+    msoption|count_products==available,
+    msoption|season==season,
+    msoc|color==color,
     ',
 
     'filters' => '
@@ -40,7 +49,10 @@
     ms|new:boolean,
     ms|old_price:boolean,
     msoption|size_simple:checkbox,
-
+    msoption|count_products:boolean,
+    msoption|season:select,
+    msoc|color~value~color:checkbox,
+    parent:parents,
     ',
 
 
@@ -60,7 +72,14 @@
     'tplFilter.outer.size'=>'@FILE chunks/filters/filter_tile_outer.tpl',
     'tplFilter.row.size'=>'@FILE chunks/filters/filter_tile_row.tpl',
 
+    'tplFilter.outer.available'=>'@FILE chunks/filters/filter_toggle_outer.tpl',
+    'tplFilter.row.available'=>'@FILE chunks/filters/filter_toggle_row_available.tpl',
 
+    'tplFilter.outer.season'=>'@FILE chunks/filters/filter_select_outer.tpl',
+    'tplFilter.row.season'=>'@FILE chunks/filters/filter_select_row.tpl',
+
+    '-tplFilter.outer.color'=>'@FILE chunks/filters/filter_color_outer.tpl',
+    '-tplFilter.row.color'=>'@FILE chunks/filters/filter_color_row.tpl',
 
 
 

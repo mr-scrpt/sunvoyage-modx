@@ -38,9 +38,7 @@
 
             {/if}
             {if $count >= 1 && $count <= 2 } Осталось несколько штук {/if} {if $count>= 3 && $count <= 5 } Заканчивается {/if} {if $count> 5 }
-
                 В наличии
-
                 {/if}
           </div>
           <div class="snippet__title">{$pagetitle}</div>
