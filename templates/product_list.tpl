@@ -51,7 +51,7 @@
     msoption|size_simple:checkbox,
     msoption|count_products:boolean,
     msoption|season:select,
-    msoc|color~value~color:checkbox,
+    msoc|color~color:boolean,
     parent:parents,
     ',
 
@@ -78,8 +78,8 @@
     'tplFilter.outer.season'=>'@FILE chunks/filters/filter_select_outer.tpl',
     'tplFilter.row.season'=>'@FILE chunks/filters/filter_select_row.tpl',
 
-    '-tplFilter.outer.color'=>'@FILE chunks/filters/filter_color_outer.tpl',
-    '-tplFilter.row.color'=>'@FILE chunks/filters/filter_color_row.tpl',
+    'tplFilter.outer.color'=>'@FILE chunks/filters/filter_color_outer.tpl',
+    'tplFilter.row.color'=>'@FILE chunks/filters/filter_color_row.tpl',
 
 
 

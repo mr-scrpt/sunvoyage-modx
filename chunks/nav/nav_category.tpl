@@ -7,6 +7,7 @@
         {$_modx->runSnippet('pdoMenu', [
         'parents'=> 8,
         'level'=> '1',
+        'hereClass' => 'menu-b__top-item_active',
         'tpl'=> '@FILE chunks/nav/nav_categorie_level_first.tpl',
         'tplOuter' => '@INLINE {{+wrapper}}',
         '-tplParentRowActive' => '@FILE chunks/nav/nav_test.tpl',

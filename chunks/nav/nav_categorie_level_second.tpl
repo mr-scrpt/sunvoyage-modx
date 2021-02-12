@@ -1,5 +1,5 @@
 <div class="menu-b__sub-item">
-  <a class="menu-b__sub-text link" href="{$link}"> 2 - {$menutitle}</a>
+  <a class="menu-b__sub-text link" href="{$link}">{$menutitle}</a>
   <div class="menu-b__inside">
     {$wrapper}
   </div>

@@ -1,8 +1,7 @@
 {var $key = $table ~ $delimeter ~ $filter}
-<fieldset  class="filter__row" id="mse2_{$key}">
+<fieldset class="filter__name" id="mse2_{$key}">
   <div class="filter__name">{('mse2_filter_' ~ $table ~ '_' ~ $filter) | lexicon}</div>
   <div class="filter__color-box">
-  {$rows}
+    {$rows}
   </div>
 </fieldset>
-

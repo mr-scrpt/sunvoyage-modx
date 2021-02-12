@@ -1,7 +1,8 @@
-{var $key = $table ~ $delimeter ~ $filter}
-<fieldset  class="filter__row" id="mse2_{$key}">
-  <div class="filter__name">{('mse2_filter_' ~ $table ~ '_' ~ $filter) | lexicon}</div>
-  <div class="filter__color-box">
-  {$rows}
-  </div>
-</fieldset>
+{var $title = $title|split:'~'}
+<sup>[[+num]]</sup>
+<label class="label checkbox-color checkbox-color_size_l filter__input-color filter__input-color_[[+disabled]] "
+	for="mse2_[[+table]][[+delimeter]][[+filter]]_[[+idx]]">
+	<input class="checkbox-color__control" type="checkbox" name="[[+filter_key]]"
+		id="mse2_[[+table]][[+delimeter]][[+filter]]_[[+idx]]" value="[[+value]]" [[+checked]] [[+disabled]] />
+	<div class="checkbox-color__box" data-color="#{$title[1]}"></div>
+</label>
