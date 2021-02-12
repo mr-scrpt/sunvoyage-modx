@@ -29,7 +29,7 @@
             </div>
             <div class="filter__second">
               <div class="filter__row">
-                {'my_msoc|color'| placeholder}
+                {'my_msoc|color~value~color'| placeholder}
                 <!-- <div class="filter__name">Цвет</div>
                 <div class="filter__color-box">
                   <label class="label checkbox-color checkbox-color_size_l filter__input-color">

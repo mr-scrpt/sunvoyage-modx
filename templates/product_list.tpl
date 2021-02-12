@@ -40,7 +40,7 @@
     msoption|size_simple==size,
     msoption|count_products==available,
     msoption|season==season,
-    msoc|color==color,
+    msoc|color~value~color==color,
     ',
 
     'filters' => '
@@ -51,7 +51,7 @@
     msoption|size_simple:checkbox,
     msoption|count_products:boolean,
     msoption|season:select,
-    msoc|color~color:boolean,
+    msoc|color~value~color,
     parent:parents,
     ',
 

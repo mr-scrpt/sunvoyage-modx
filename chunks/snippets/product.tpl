@@ -37,7 +37,8 @@
             Нет в наличии
 
             {/if}
-            {if $count >= 1 && $count <= 2 } Осталось несколько штук {/if} {if $count>= 3 && $count <= 5 } Заканчивается {/if} {if $count> 5 }
+            {if $count >= 1 && $count <= 2 } Осталось несколько штук {/if} {if $count>= 3 && $count <= 5 } Заканчивается
+                {/if} {if $count> 5 }
                 В наличии
                 {/if}
           </div>
@@ -54,14 +55,19 @@
       </div>
     </div>
 
-    <div class="snippet__action">
-      <button class='button button_size_l button_view_trans snippet__button {$count == 0 ? "button_view_disabled": ""}'>
+    <form method="post" class="snippet__action ms2_form">
+      <input type="hidden" name="id" value="{$id}">
+      <input type="hidden" name="count" value="1">
+      <input type="hidden" name="options" value="[]">
+      <button name="ms2_action" value="cart/add"
+        class='button button_size_l button_view_trans snippet__button {$count == 0 ? "button_view_disabled": ""}'>
         <span class="button__text">В корзину</span>
       </button>
-      <button class='button button_size_l button_view_trans snippet__button {$count == 0 ? "button_view_disabled": "" }'>
+      <button
+        class='button button_size_l button_view_trans snippet__button {$count == 0 ? "button_view_disabled": "" }'>
         <span class="button__text">Купить в 1 клик</span>
       </button>
-    </div>
+    </form>
 
   </div>
 </div>
