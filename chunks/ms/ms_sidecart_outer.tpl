@@ -13,10 +13,13 @@
       </div>
     </div>
     <div class="panel__body">
+      {if $_modx->resource.id != 118}
       {$_modx->runSnippet("!msCart", [
       'tpl'=> '@FILE chunks/ms/ms_sidecart.tpl',
       'includeThumbs'=> 'small',
       ])}
+      {/if}
+
     </div>
   </div>
 

@@ -2,7 +2,8 @@
 <div>{'ms2_cart_is_empty' | lexicon}</div>
 
 {else}
-<div class="cart__list" id="msCart">
+
+<div class="cart__list order__list" id="msCart">
   {foreach $products as $product}
   {var $image}
   {if $product.thumb?}
@@ -58,33 +59,25 @@
     </div>
   </div>
   {/foreach}
-  <div class="cart__row cart__footer-row">
-    <div class="cart__col-info">
-      <div class="cart__button">
-        <a href="{$_modx->makeUrl(118)}" class="button button_size_l button_view_action">
-          <div class="button__text">Оформить заказ</div>
-        </a>
-      </div>
-      <div class="cart__total">Итого</div>
-    </div>
-    <div class="cart__col-pricing price">
-      <div class="cart__total-price">
-        <span class="ms2_total_cost">{$total.cost}</span> ₴
-      </div>
-    </div>
+
+</div>
+<div class="cart__row cart__footer-row order__footer">
+  <div class="cart__col-info">
+    <div class="cart__total">Итого</div>
   </div>
-  <div class="cart__row cart__footer-block">
-    <div class="cart__total cart__total_block">Итого</div>
-    <div class="price">
-      <div class="cart__total-price">
-        <span class="ms2_total_cost">{$total.cost}</span> ₴
-      </div>
-    </div>
-    <div class="cart__block-button-box">
-      <a href="{$_modx->makeUrl(118)}" class="button button_size_l button_view_action button_width_available">
-        <div class="button__text">Оформить заказ</div>
-      </a>
+  <div class="cart__col-pricing price">
+    <div class="cart__total-price">
+      <span class="ms2_total_cost">{$total.cost}</span> <span>₴</span>
     </div>
   </div>
 </div>
+<div class="cart__row cart__footer-block">
+  <div class="cart__total cart__total_block">Итого</div>
+  <div class="price">
+    <div class="cart__total-price">
+      <span class="ms2_total_cost">{$total.cost}</span> <span>₴</span>
+    </div>
+  </div>
+</div>
+
 {/if}
