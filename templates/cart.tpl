@@ -18,6 +18,7 @@
 
       {$_modx->runSnippet('!msOrder', [
       'tpl' => '@FILE chunks/ms/ms_orderform.tpl'
+      '-tpl' => '@FILE chunks/ms/ms_orderform-test.tpl'
       ])}
     </div>
   </div>
