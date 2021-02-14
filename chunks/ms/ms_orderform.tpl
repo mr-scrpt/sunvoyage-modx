@@ -14,6 +14,7 @@
       <div class="order__body">
         <div class="order__step order__step_first order__step_active">
           <div class="order__body-title">Личные данные</div>
+          <div class="order__body-err-msg"></div>
           <div class="order__body-form form">
             {foreach ['email','receiver','phone'] as $field}
             <label class="input input_size_l contact-form__input input_width_available" for="{$field}">
@@ -21,19 +22,15 @@
                 <span class="input__name"> {('ms2_frontend_' ~ $field) | lexicon}</span>
                 <input class="input__control form-control{($field in list $errors) ? ' error' : ''}" placeholder=""
                   name="{$field}" id="{$field}" type="text" value="{$form[$field]}" />
-
               </span>
             </label>
             {/foreach}
-
-
-
 
           </div>
 
         </div>
         <div class="order__footer order__footer-form">
-          <button class="button button_size_l button_view_action order__btn-next">
+          <button class="button button_size_l button_view_action order__btn-next order__btn-next-step">
             <div class="button__text">Следующий шаг</div>
           </button>
         </div>
@@ -51,6 +48,7 @@
 
         <div class="order__step order__step">
           <div class="order__body-title">Доставка</div>
+          <div class="order__body-err-msg"></div>
           <div class="order__body-form form">
             <div class="select select_size_l select_width_available contact-form__input">
               <span class="select__name">Тип доставки</span>
@@ -82,14 +80,15 @@
 
           </div>
 
-          <div class="order__footer order__footer-form">
-            <button class="button button_size_l order__btn-prev">
-              <div class="button__text">Назад </div>
-            </button>
-            <button class="button button_size_l button_view_action order__btn-next">
-              <div class="button__text">Следующий шаг</div>
-            </button>
-          </div>
+
+        </div>
+        <div class="order__footer order__footer-form">
+          <button class="button button_size_l order__btn-prev">
+            <div class="button__text">Назад </div>
+          </button>
+          <button class="button button_size_l button_view_action order__btn-next order__btn-next-step">
+            <div class="button__text">Следующий шаг</div>
+          </button>
         </div>
       </div>
     </div>
@@ -103,53 +102,37 @@
       </div>
       <div class="order__body">
 
-        <!-- <div class="order__step order__step_third">
+
+        <div class="order__step order__step_third">
           <div class="order__body-title">Оплата</div>
+          <div class="order__body-err-msg"></div>
           <div class="order__body-form" id="payments">
-            <div class="select select_size_l select_width_available contact-form__input"><span class="select__name">Тип
-                оплаты</span>
+            <div class="order__about-info">Выбраный вами способ доставки поддерживает следующие способы оплаты:</div>
+            <div class="radio__group order__radio-box">
               {foreach $payments as $payment index=$index}
               {var $checked = !($order.payment in keys $payments) && $index == 0 || $payment.id == $order.payment}
-              <select class="select__control">
-                <optgroup class="select__group">
-                  <option class="select__option" value="first">Наложенный платеж</option>
-                  <option class="select__option" value="second">Предоплата на карту</option>
-                </optgroup>
-              </select>
+              <label for="payment_{$payment.id}" class="radio radio_size_l input-parent order__radio">
+                <span class="radio__box">
+                  <input class="radio__control" type="radio" name="payment" value="{$payment.id}"
+                    id="payment_{$payment.id}" {$checked ? 'checked' : '' }>
+                </span>
+                <span class="radio__text" role="presentation">{$payment.name}</span>
+              </label>
               {/foreach}
             </div>
+
           </div>
         </div>
- -->
-        <div class="col-12 col-md-6" id="payments">
-          <h4>{'ms2_frontend_payments' | lexicon}:</h4>
-          <div class="form-group row">
-            <div class="col-12">
-              {foreach $payments as $payment index=$index}
-              {var $checked = !($order.payment in keys $payments) && $index == 0 || $payment.id == $order.payment}
-              <div class="checkbox">
-                <label class="col-form-label payment input-parent">
-                  <input type="radio" name="payment" value="{$payment.id}" id="payment_{$payment.id}" {$checked
-                    ? 'checked' : '' }>
-                  {if $payment.logo?}
-                  <img src="{$payment.logo}" alt="{$payment.name}" title="{$payment.name}" class="mw-100" />
-                  {else}
-                  {$payment.name}
-                  {/if}
-                  {if $payment.description?}
-                  <p class="small">{$payment.description}</p>
-                  {/if}
-                </label>
-              </div>
-              {/foreach}
-            </div>
-          </div>
-        </div>
+
+
+
+
+
         <div class="order__footer order__footer-form">
           <button class="button button_size_l order__btn-prev">
             <div class="button__text">Назад </div>
           </button>
-          <button class="button button_size_l button_view_action  btn btn-lg btn-primary ml-md-2 ms2_link" type="submit"
+          <button class="button button_size_l button_view_action order__btn-next-step ms2_link" type="submit"
             name="ms2_action" value="order/submit">
             <div class="button__text">{'ms2_frontend_order_submit' | lexicon}</div>
           </button>
