@@ -17,6 +17,7 @@
       </div>
 
       {$_modx->runSnippet('!msOrder', [
+      'userFields'=>'officeNumber',
       'tpl' => '@FILE chunks/ms/ms_orderform.tpl'
       '-tpl' => '@FILE chunks/ms/ms_orderform-test.tpl'
       ])}
