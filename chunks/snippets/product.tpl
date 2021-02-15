@@ -43,11 +43,15 @@
                 {/if}
           </div>
           <div class="snippet__title">{$pagetitle}</div>
-          <div class="snippet__size">41 см х 31 см х 7 см</div>
+          <div class="snippet__size">{$_modx->runSnippet('msProductOptions', [
+            'product' => $id,
+            'onlyOptions' => 'dimensions'
+            ])}</div>
         </div>
         {if $price > 0}
         <div class="snippet__pricing-box">
           <div class="snippet__price">{$price} ₴</div>
+
           {$old_price? "<div class='snippet__price-old'>$old_price ₴</div>" : ""}
 
         </div>
@@ -60,11 +64,12 @@
       <input type="hidden" name="count" value="1">
       <input type="hidden" name="options" value="[]">
       <button name="ms2_action" value="cart/add"
-        class='button button_size_l button_view_trans snippet__button {$count == 0 ? "button_view_disabled": ""}'>
+        class='button button_size_l button_view_trans snippet__button {$count == 0 ? "button_view_disabled": ""}'
+        {$count==0 ? "disabled" : "" }>
         <span class="button__text">В корзину</span>
       </button>
-      <button
-        class='button button_size_l button_view_trans snippet__button {$count == 0 ? "button_view_disabled": "" }'>
+      <button class='button button_size_l button_view_trans snippet__button {$count == 0 ? "button_view_disabled": "" }'
+        {$count==0 ? "disabled" : "" }>
         <span class="button__text">Купить в 1 клик</span>
       </button>
     </form>

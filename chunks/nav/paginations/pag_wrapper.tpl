@@ -1,3 +1,6 @@
+{if $pages | length == 0}
+
+{else}
 <div class="pagination__inner">
   <div class="pagination__control pagination__prev">
     {$prev}
@@ -10,3 +13,4 @@
     {$next}
   </div>
 </div>
+{/if}

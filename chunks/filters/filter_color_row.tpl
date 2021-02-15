@@ -1,5 +1,4 @@
 {var $title = $title|split:'~'}
-<sup>[[+num]]</sup>
 <label class="label checkbox-color checkbox-color_size_l filter__input-color filter__input-color_[[+disabled]] "
 	for="mse2_[[+table]][[+delimeter]][[+filter]]_[[+idx]]">
 	<input class="checkbox-color__control" type="checkbox" name="[[+filter_key]]"
