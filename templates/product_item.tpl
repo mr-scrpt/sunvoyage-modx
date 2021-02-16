@@ -15,21 +15,15 @@
         <div class="title product__title">
           <div class="title__main">{$_modx->resource.pagetitle}</div>
         </div>
-        <div class="product__article">Артикул: {$_modx->resource.article}</div>
+        <div class="product__article">Артикул: {$article}</div>
         <div class="product__tech tech">
           <table class="tech__inner">
-            <tr class="tech__row">
-              <td class="tech__cell">Размер</td>
-              <td class="tech__cell">41 см х 31 см х 7 см</td>
-            </tr>
-            <tr class="tech__row">
-              <td class="tech__cell">Материал</td>
-              <td class="tech__cell">Кожа</td>
-            </tr>
-            <tr class="tech__row">
-              <td class="tech__cell">Фурнитура</td>
-              <td class="tech__cell">Lux</td>
-            </tr>
+            {$_modx->runSnippet('msProductOptions', [
+            'product' => $id,
+            'ignoreOptions' => 'count_products,size_simple,special'
+            'tpl' => '@FILE chunks/product/option_main.tpl'
+            ])}
+
             <tr class="tech__row tech">
               <td class="tech__cell">Количество</td>
               <td class="tech__cell counter">
@@ -47,31 +41,43 @@
             </tr>
           </table>
         </div>
-        <div class="product__action action">
+        <form method="post" class="product__action action ms2_form">
+          <input type="hidden" name="id" value="{$_modx->resource.id}">
+          <input type="hidden" name="count" value="1">
+          <input type="hidden" name="options" value="[]">
           <div class="action__inner">
             <div class="action__price-box price">
               <div class="price__inner">
-                <div class="price__current action__price-current">2 246 ₴</div>
-                <div class="price__discount action__price-discount"> 2 246 ₴</div>
+                <div class="price__current action__price-current"> {$price} ₴</div>
+                {$old_price? '<div class="price__discount action__price-discount">
+                  {$old_price} ₴</div>' : ''}
               </div>
             </div>
             <div class="action__button">
-              <button class="button button_size_l button_view_action action__incart"><span class="button__text">Добавить
-                  в корзину</span></button>
-              <button class="button button_size_l"><span class="button__text">Купить в 1 клик</span></button>
+              <button class="button button_size_l button_view_action action__incart" type="submit" name="ms2_action"
+                value="cart/add">
+                <span class="button__text">
+                  Добавить в корзину
+                </span>
+              </button>
+              {$_modx->runSnippet('!msOneClick', [
+              'id' => $_modx->resource.id,
+              'create_order' => 'MS',
+              'delivery' => '4',
+              'required_fields' => 'receiver,phone',
+              'tplBtn' => '@FILE chunks/ms/ms_oneclick_btn.tpl',
+              'tplModal' => '@FILE chunks/ms/ms_oneclick_modal.tpl',
+              'tplForm' => '@FILE chunks/ms/ms_oneclick_form.tpl ',
+              ])}
+
             </div>
           </div>
-        </div>
+        </form>
       </div>
       <div class="product__descriptio-box">
         <div class="product__descriptio-box__title">Описание</div>
         <div class="product__descriptio-box__text paragraphs">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute </p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute </p>
+          {$_modx->resource.content}
         </div>
       </div>
     </div>
