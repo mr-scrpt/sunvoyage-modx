@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
-      <div class="oneclick__inner">
+      <div class="oneclick__inner" id="[[+selector]]_body">
         <div class="oneclick__header">
           <div class="oneclick__title title">
             <div class="title__main">Покупка в 1 клик</div>

@@ -2,7 +2,9 @@
 'id' => $id,
 'field_name' => 'count_products',
 ]}
-<div class="snippet cat__item">
+
+{var $instok = true}
+{if $count <= 0 || $price <=0} {$instok=false} {/if} <div class="snippet cat__item">
   <div class="snippet__inner">
     <div class="snippet__main">
       <div class="snippet__info">
@@ -64,15 +66,21 @@
       <input type="hidden" name="count" value="1">
       <input type="hidden" name="options" value="[]">
       <button name="ms2_action" value="cart/add"
-        class='button button_size_l button_view_trans snippet__button {$count == 0 ? "button_view_disabled": ""}'
-        {$count==0 ? "disabled" : "" }>
+        class='button button_size_l button_view_trans snippet__button {!$instok ? "button_view_disabled": ""}' {!$instok
+        ? "disabled" : "" }>
         <span class="button__text">В корзину</span>
       </button>
-      <button class='button button_size_l button_view_trans snippet__button {$count == 0 ? "button_view_disabled": "" }'
-        {$count==0 ? "disabled" : "" }>
-        <span class="button__text">Купить в 1 клик</span>
-      </button>
+
+      {$_modx->runSnippet('!msOneClick', [
+      'id' => $id,
+      'create_order' => 'MS',
+      'delivery' => '4',
+      'required_fields' => 'receiver,phone',
+      'tplBtn' => '@FILE chunks/ms/ms_oneclick_btn_list.tpl',
+      'tplModal' => '@FILE chunks/ms/ms_oneclick_modal.tpl',
+      'tplForm' => '@FILE chunks/ms/ms_oneclick_form.tpl ',
+      ])}
     </form>
 
   </div>
-</div>
+  </div>
