@@ -7,22 +7,21 @@
         <div class="title__main">Корзина</div>
       </div>
       <div class="cart__cancel">
-        <button class="button button_size_l button_view_trans cart-control">
+        <span class="button button_size_l button_view_trans cart-control">
           <div class="icon icon_close"></div>
-        </button>
+        </span>
       </div>
     </div>
-    <div class="panel__body">
-      {if $_modx->resource.id != 118}
+
+    <div class="panel__body" id="msDynamicCart">
+
+      [[!msDynamicCart]]
       {$_modx->runSnippet("!msCart", [
       'tpl'=> '@FILE chunks/ms/ms_sidecart.tpl',
       'includeThumbs'=> 'small',
       ])}
-      {/if}
 
     </div>
+
   </div>
-
-
-
 </div>

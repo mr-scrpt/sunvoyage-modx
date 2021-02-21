@@ -1,5 +1,5 @@
 {if $products | length == 0}
-<div>{'ms2_cart_is_empty' | lexicon}</div>
+<div class="cart__empty-info">{'ms2_cart_is_empty' | lexicon}</div>
 
 {else}
 <div class="cart__list" id="msCart">

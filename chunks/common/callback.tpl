@@ -15,7 +15,7 @@
       'hooks' => 'spam,email,FormItSaveForm',
       'emailTpl' => '@FILE chunks/email/email_callback.tpl',
       'emailSubject' => 'Заказ обратного звонка',
-      'emailTo' => $_modx->getPlaceholder('+conf_email'),
+      'emailTo' => $_modx->getPlaceholder('+conf_mail'),
       'emailFrom' => $_modx->config.emailsender,
       'formName' => 'Заказ обратного звонка',
       'validate' => 'page:required,phone:required:isNumber,antispam:blank',

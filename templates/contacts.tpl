@@ -63,7 +63,8 @@
             </div>
             <div class="contact__info">
               <div class="contact__name">Инстаграм</div>
-              <a href="https://www.instagram.com/{$_modx->config.conf_insta_acc}" class="contact__value link" target="_balnk">{$_modx->config.conf_insta_acc}</a>
+              <a href="https://www.instagram.com/{$_modx->config.conf_insta_acc}" class="contact__value link"
+                target="_balnk">{$_modx->config.conf_insta_acc}</a>
             </div>
           </div>
         </div>
@@ -88,7 +89,7 @@
               'hooks' => 'spam,email,FormItSaveForm',
               'emailTpl' => '@FILE chunks/email/email_contact.tpl',
               'emailSubject' => 'Форма с вопросом',
-              'emailTo' => $_modx->getPlaceholder('+conf_email'),
+              'emailTo' => $_modx->getPlaceholder('+conf_mail'),
               'emailFrom' => $_modx->config.emailsender,
               'formName' => 'Форма с вопросом',
               'validate' => 'page:required,name:required,mail:email:required,antispam:blank',

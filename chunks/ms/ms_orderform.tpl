@@ -66,7 +66,8 @@
             </div>
 
             {foreach ['city','officeNumber'] as $field}
-            <label class="input input_size_l contact-form__input input_width_available input-parent">
+            <label
+              class="input input_size_l contact-form__input input_width_available input-parent order__dynamicField">
               <span class="input__box">
                 <span class="input__name">{('ms2_frontend_' ~ $field) | lexicon}</span>
                 <input class="input__control{($field in list $errors) ? ' error' : ''}" type="text" id="{$field}"
